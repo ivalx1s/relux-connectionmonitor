@@ -12,7 +12,7 @@ extension ConnectionMonitor {
 	public final class Service: ServiceFacade {
 		private let networkService: ConnectionMonitor.NetworkMonitoring
 		
-		init(networkService: NetworkMonitoring) {
+		public init(networkService: NetworkMonitoring) {
 			self.networkService = networkService
 		}
 		

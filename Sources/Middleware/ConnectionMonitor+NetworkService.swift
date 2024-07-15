@@ -3,8 +3,8 @@ import Network
 
 public extension ConnectionMonitor {
 	struct NetworkStatus: Sendable, Equatable, CustomStringConvertible, CustomDebugStringConvertible {
-		let connected: Bool
-		let expensive: Bool
+		public let connected: Bool
+		public let expensive: Bool
 		
 		public init(connected: Bool, expensive: Bool) {
 			self.connected = connected
@@ -38,6 +38,9 @@ public extension ConnectionMonitor {
 		private let queue = DispatchQueue(label: "ConnectionMonitor.NetworkService", qos: .userInitiated)
 		
 		private let statusSubject = AsyncStream<NetworkStatus>.makeStream()
+		
+		public init() {
+		}
 		
 		public var networkStatus: AsyncStream<NetworkStatus> {
 			get async {

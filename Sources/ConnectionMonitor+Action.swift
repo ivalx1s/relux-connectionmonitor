@@ -1,6 +1,6 @@
 import Relux
 
-extension ConnectionMonitor {
+public extension ConnectionMonitor {
 	enum Action: ReluxAction {
 		case updateStatus(_ status: ConnectionMonitor.NetworkStatus)
 	}

@@ -2,17 +2,17 @@ import Foundation
 import Relux
 
 extension ConnectionMonitor {
-	protocol Saga: ReluxSaga {}
+	public protocol Saga: ReluxSaga {}
 }
 
 
 extension ConnectionMonitor {
-	actor ConnectionMonitorSaga: Saga {
+	public actor ConnectionMonitorSaga: Saga {
 		private let service: ConnectionMonitor.ServiceFacade
 		
 		private var networkStatusTask: Task<Void, Never>?
 		
-		init(service: ServiceFacade) {
+		public init(service: ServiceFacade) {
 			self.service = service
 			Task { await setupNetworkMonitoring() }
 		}
@@ -21,7 +21,7 @@ extension ConnectionMonitor {
 			networkStatusTask?.cancel()
 		}
 		
-		func apply(_ effect: ReluxEffect) async {
+		public func apply(_ effect: ReluxEffect) async {
 			switch effect as? ConnectionMonitor.SideEffect {
 				case .none:
 					break
@@ -46,8 +46,6 @@ extension ConnectionMonitor {
 			await action {
 				ConnectionMonitor.Action.updateStatus(status)
 			}
-			
-			guard status.connected else { return }
 		}
 		
 		private func startNetworkMonitor() async {

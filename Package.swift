@@ -3,14 +3,14 @@
 import PackageDescription
 
 let package = Package(
-    name: "ios-featuremanagement",
+    name: "darwin-connectionmonitor",
     platforms: [
         .iOS(.v17)
     ],
     products: [
         .library(
-            name: "FeatureManagementModule",
-            targets: ["FeatureManagementModule"]
+            name: "ConnectionMonitor",
+            targets: ["ConnectionMonitor"]
         ),
     ],
     dependencies: [
@@ -18,7 +18,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "FeatureManagementModule",
+            name: "ConnectionMonitor",
             dependencies: [
                 .product(name: "Relux", package: "darwin-relux")
             ],
