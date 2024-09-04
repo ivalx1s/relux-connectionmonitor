@@ -1,7 +1,7 @@
 import Relux
 
 extension ConnectionMonitor {
-	public enum SideEffect: ReluxEffect {
+	public enum SideEffect: Relux.Effect {
 		case startNetworkMonitor
 	}
 }

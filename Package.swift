@@ -1,9 +1,9 @@
-// swift-tools-version: 6.0
+// swift-tools-version: 5.10
 
 import PackageDescription
 
 let package = Package(
-    name: "darwin-connectionmonitor",
+    name: "relux-connectionmonitor",
     platforms: [
         .iOS(.v17)
     ],
@@ -14,7 +14,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/ivalx1s/darwin-relux.git", .upToNextMajor(from: "6.0.0")),
+        .package(url: "https://github.com/ivalx1s/darwin-relux.git", .upToNextMajor(from: "5.0.1"))
     ],
     targets: [
         .target(

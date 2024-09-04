@@ -2,7 +2,7 @@ import Foundation
 import Relux
 
 extension ConnectionMonitor {
-	public protocol Saga: ReluxSaga {}
+	public protocol Saga: Relux.Saga {}
 }
 
 
@@ -21,7 +21,7 @@ extension ConnectionMonitor {
 			networkStatusTask?.cancel()
 		}
 		
-		public func apply(_ effect: ReluxEffect) async {
+		public func apply(_ effect: Relux.Effect) async {
 			switch effect as? ConnectionMonitor.SideEffect {
 				case .none:
 					break
