@@ -2,7 +2,7 @@ import Combine
 import Relux
 
 public extension ConnectionMonitor.Business {
-	actor State: Relux.State {
+    actor State: Relux.BusinessState {
 		@Published public private(set) var status: ConnectionMonitor.NetworkStatus = .initial
 		
 		public init() {
